@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css"> 
+	<link rel="stylesheet" type="text/css" href="css/media.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="main">
+		<div class="container">
+			<div class="container__wrapper">
+				<div class="container__group">
+					<div class="container__title">MSI 2020</div>
+					<div class="container__short-title">Hey!</div>
+					<div class="container__full-title">Let`s try to find a joke for you</div>
+				</div>
+				<div class="container__choose">
+					<div id="chuck">
+						<input class="container__choose__input" type="radio" name="name" value="random" data-joke-type="random">
+						<label for="random">Random</label>
+					</div>
+					<div>
+						<input class="container__choose__input" type="radio" name="name" value="categories" data-joke-type>
+						<label for="categories">From categories</label>
+						<div class="input-categories">
+							<div class="animal" tabindex="0" data-joke-type="animal">Animal</div>
+							<div class="career" tabindex="1" data-joke-type="career">Career</div>
+							<div class="celebrity" tabindex="2" data-joke-type="celebrity">Celebrity</div>
+							<div class="dev" tabindex="3" data-joke-type="dev">Dev</div>
+						</div>
+					</div>
+					<div>
+						<input class="container__choose__input" type="radio" name="name" id="search" value="search"  data-joke-type="search">
+						<label for="search">Search</label>
+						<div class="input-search">
+							<input id="search-area" class="search-input" data-search-field type="text" placeholder="Free text search...">
+						</div>
+					</div>
+					<div id="button">
+					<button class="get__joke" id="get-joke" type="button" type="submit" name="submit" value="Get a joke">Get a joke</button>
+				</div>
+			</div>
+			</div>
+			<div class="container__joke">
+				<div id="output"></div>
+			</div>
+		</div>
+		<div class="favourite">
+			<div class="favourite__title">Favourite</div>
+			<div class="favourite__jokes">
+				<div id="output-favourite"></div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="js/script.js"></script>
+</html>
