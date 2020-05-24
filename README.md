@@ -1,3 +1,3 @@
 chuck-norris
 
-public link - 
+public link - https://msi.strahoff.com.ua/
