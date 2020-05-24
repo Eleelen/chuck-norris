@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
                   item.addEventListener('click', () => {
                         let itemType = item.getAttribute('data-joke-type');
                         selectedJokeType = itemType.length ? itemType : false;
-
                   })
             });
       }
@@ -31,7 +30,11 @@ document.addEventListener('DOMContentLoaded', function () {
             const value = document.createElement('div');
             const updated_at = document.createElement('div');
             const categories = document.createElement('div');
-            
+
+            const dateNow = Date.now();
+            const updated = new Date(data.updated_at);
+            const resDate = Number.parseInt(
+                  (dateNow - updated) / (1000 * 60 * 60));
             
             joke.className = 'joke';
             joke_icon.className = 'joke__icon';
@@ -42,14 +45,12 @@ document.addEventListener('DOMContentLoaded', function () {
             id.className = 'joke__id';
             updated_at.className = 'joke__updated_at';
             categories.className = 'joke__categories';
-            favourite.className = 'favourite__joke';
 
             icon.innerHTML = '<img src="./img/icon-white.png" alt="">';
             like.innerHTML = '<img src="./img/heart.png" alt="">';
-            //id.innerHTML = 'ID:' + ' ' + data.id;
-            id.innerHTML = `<a href="${data.url}">${data.id}</a>`;
+            id.innerHTML = 'ID:' + ' ' + `<a href="${data.url}">${data.id}</a>` + ' ' + '<img src="./img/link.png" alt="">';
             value.innerHTML = data.value;
-            updated_at.innerHTML = 'Last update:' + ' ' + data.updated_at + ' ' + 'hours ago';
+            updated_at.innerHTML = 'Last update:' + ' ' + resDate + ' ' + 'hours ago';
             categories.innerHTML = data.categories;
 
             joke.appendChild(like);
@@ -61,7 +62,6 @@ document.addEventListener('DOMContentLoaded', function () {
             joke_body.appendChild(updated_at);
             joke_body.appendChild(categories);
             result.appendChild(joke);
-
       }
 
       const getJoke = () => {
@@ -74,27 +74,12 @@ document.addEventListener('DOMContentLoaded', function () {
                  endpoint = `${apiUrl}/random?category=${selectedJokeType}`; 
             }
 
-            if(!endpoint || !selectedJokeType || !searchQuery.length) throw new Error('Select a joke type');
             fetch (endpoint)
-                  .then(response => {
-                        if (!response.ok) {
-                              throw Error(response.statusText);
-                        }
-                              return response;
-                        })
                  .then(responce => responce.json())
-                 .then(data => {
-                        if(data.total) {
-                              showData(data)
-                        } else {
-                              throw new Error('Can`t find jokes :(');
-                        }
-                  })
-                 .catch(error => {
-                        throw new Error('Error')}
-                  )
-      }
-
+                 .then(data => showData(data))
+                        
+            }
+                 
       selectJoke();
       document.getElementById('get-joke').addEventListener('click', event => {
             event.preventDefault();
@@ -102,32 +87,3 @@ document.addEventListener('DOMContentLoaded', function () {
       });
             
    })
-      
-
-
-
-
-            /*function addToFavorite(){
-        const reqObj = { method: 'DELETE' };
-        fetch(apiUrlRandom, reqObj)
-        .then( joke.remove() )*/
-       /* 
-    
-      }
-            
-      }
-            getJoke();
-            document.querySelector(".get__joke").onclick = getJoke;
-      })
-
-/*function funс () {
-    var rad=document.getElementsByName('r1');
-    for (var i=0;i<rad.length; i++) {
-        if (rad[i].checked) {
-            document.write('Выбран '+i+' radiobutton');
-        }
-    }
-}*/
-
-
-     

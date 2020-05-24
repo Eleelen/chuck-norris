@@ -1,7 +1,4 @@
 body {
-	/*background-image: url(../desktop2.png);*/
-	background-repeat: no-repeat;
-	background-size: cover;
 	padding: 0;
     margin: 0;
 }
@@ -149,6 +146,13 @@ body {
 	cursor: pointer;
 	color: #ff6767;;
 }
+.joke__id img {
+	padding-left: 2px;
+	width: 10px;
+}
+.joke__id a {
+	color: #b0c1fd;
+}
 .joke__icon {
 	display: inline-block;
     width: 10%;
@@ -169,6 +173,7 @@ body {
 	letter-spacing: 2px;
 	text-transform: uppercase;
 	float: right;
+	padding: 5px 10px;
 }
 .joke__value {
 	padding: 5px 0px 20px;
@@ -187,6 +192,17 @@ body {
 .joke__updated_at, .joke__categories {
 	display: inline-block;
 }
-.button:hover {
-	background: red;
+.mobile-menu {
+	display: none;
+	width: 25px;
+}
+#showFav {
+	height: 100vh;
+	background: grey;
+	width: 300px;
+}
+#showFavBtn {
+	background: inherit;
+	outline: none;
+	border: none;
 }

@@ -3,6 +3,7 @@
 <head>
 	<title></title>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" type="text/css" href="css/style.css"> 
 	<link rel="stylesheet" type="text/css" href="css/media.css">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -14,11 +15,11 @@
 				<div class="container__group">
 					<div class="container__title">MSI 2020</div>
 					<div class="container__short-title">Hey!</div>
-					<div class="container__full-title">Let`s try to find a joke for you</div>
+					<div class="container__full-title">Let`s try to find a joke for you:</div>
 				</div>
 				<div class="container__choose">
-					<div id="chuck">
-						<input class="container__choose__input" type="radio" name="name" value="random" data-joke-type="random">
+					<div>
+						<input class="container__choose__input" type="radio" name="name" value="random" data-joke-type="random" checked>
 						<label for="random">Random</label>
 					</div>
 					<div>
@@ -39,21 +40,27 @@
 						</div>
 					</div>
 					<div id="button">
-					<button class="get__joke" id="get-joke" type="button" type="submit" name="submit" value="Get a joke">Get a joke</button>
+						<button class="get__joke" id="get-joke" type="button" type="submit" name="submit" value="Get a joke">Get a joke</button>
+					</div>
 				</div>
-			</div>
 			</div>
 			<div class="container__joke">
 				<div id="output"></div>
 			</div>
 		</div>
 		<div class="favourite">
-			<div class="favourite__title">Favourite</div>
-			<div class="favourite__jokes">
-				<div id="output-favourite"></div>
+			<div class="favourite__title">
+				<button id="showFavBtn">
+					<img class="mobile-menu" src="./img/menu.png" alt=""/>
+				</button>
+				<div>Favourite</div>
+			</div>
+			<div class="favourite__jokes" id="show-fav">
+				<div class="output-favourite"></div>
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script src="js/script.js"></script>
+	<script src="js/menu.js"></script>
+</body>
 </html>
